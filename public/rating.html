@@ -4,61 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rating</title>
     <link rel="shortcut icon" href="./images/omega.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+     <title>Rating</title>
 </head>
 
 <body>
     <div class="header center orange">
-        <h2>Omega find rate use</h2>
     </div>
     <div class="logo">
-        <img src="./images/omega.svg" alt="">
+        <img src="./images/omega.svg" alt="omega logo">
     </div>
-  
-
-  
-
-        <div class="row">
-            <div class="col s12">  
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <button id="btnLogin" class="btn btn-action waves-effect waves-light"  name="action">Log In
-                    <i class="material-icons right">person</i>
-                </button>
-                <button  id="btnSignUp"class="btn btn-action waves-effect waves-light"  name="action">Sign Up
-                    <i class="material-icons right">person_add</i>
-                </button>
-                <button  id="btnLogout"class="btn btn-action waves-effect waves-light hide"  name="action">Log Out
-                    <i class="material-icons right">eject</i>
-                </button>
+    <div class="container mt-5">
+        <div class=" form-group">
+            <select id="bathroom-select" class="form-control custom-select">
+                <option value="0" disabled selected>Select Product</option>
+                <option value="Sev">7-11 </option>
+                <option value="walmart">Walmart </option>
+                <option value="flyingJ">Flying J</option>
+                <option value="littleAmerica">Little America</option>
+                <option value="maverick">Maverick</option>
+            </select>
         </div>
-
+        <div class="form-group">
+            <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1 - 5" disabled>
         </div>
-        </div>
-        <div class="page-footer">
-            <p class="center">logo © Shawn Connell 2018</p>
-            <br>
-            <p class="center">© Pueblas Conductiadad</p>
-            <br> </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Restroom</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Sev">
+                    <td>7-11</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="walmart">
+                    <td>Walmart</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="flyingJ">
+                    <td>Flying J</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="littleAmerica">
+                    <td>Little America</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+                <tr class="maverick">
+                    <td>Maverick</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page-footer">
+        <p class="center">logo © Shawn Connell 2018</p>
+        <br>
+        <p class="center">© Pueblas Conductiadad</p>
+        <br> </div>
+</body>
+<script src="js/rating.js"></script>
 
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-        <script src="js/rating.js"></script>
-    </body>
-
-    </html>
+</html>
