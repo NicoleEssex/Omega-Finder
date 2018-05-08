@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="./images/omega.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
-    <title>Omega</title>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+     <title>Rating</title>
 </head>
 
 <body>
-
     <div class="header center orange">
-
     </div>
     <div class="logo">
         <img src="./images/omega.svg" alt="omega logo">
     </div>
-
-
-
-
-
     <div class="container mt-5">
         <div class=" form-group">
             <select id="bathroom-select" class="form-control custom-select">
@@ -38,12 +32,10 @@
                 <option value="littleAmerica">Little America</option>
                 <option value="maverick">Maverick</option>
             </select>
-
         </div>
         <div class="form-group">
             <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1 - 5" disabled>
         </div>
-
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -100,7 +92,6 @@
             </tbody>
         </table>
     </div>
-
     <div class="page-footer">
         <p class="center">logo © Shawn Connell 2018</p>
         <br>
