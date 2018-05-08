@@ -1,6 +1,12 @@
 // DEPENDENCIES
 var express = require("express");
 var bodyParser = require("body-parser");
+var dotEnv = require('dotenv');
+var sequelize= require("sequelize")
+//=====================================================
+
+//Set up dotEnv
+// dotEnv.config();
 //=====================================================
 
 // Set up Express App
@@ -8,8 +14,9 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 // ====================================================
 
-//TO DO
+
 // Require Models
+var db = require("./models");
 // ====================================================
 
 // Set up Express for data parsing
@@ -28,10 +35,12 @@ require("./routes/html-routes.js")(app);
 // require api route for post.js
 // ====================================================
 
-// TO DO
-// Sync sequelize models
 
-// Starting Express app
-app.listen(PORT, function(){
-    console.log("App listening on PORT "+ PORT);
-});
+
+// Syncing sequelize models and starting Express app
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
+//   ==================================================
