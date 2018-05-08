@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./images/omega.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>Finder</title>
+   
 </head>
 <body>
     <h1>This is our map display page</h1>
@@ -20,7 +21,7 @@
         <div class="logo">
             <img src="./images/omega.svg" alt="">
         </div>
-
+        <div id="map"></div>
 
 
     <div class="page-footer">
@@ -33,4 +34,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>
 <script src="js/finder.js"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiDviwzKx30i8gRwlSMYaQky5_xcekb5M&callback=initMap&libraries=places">
+</script>
 </html>
