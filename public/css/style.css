@@ -9,9 +9,10 @@
     padding: 0;
   }
 
-h3 {
-    color: red
+body  {
+  background: black;
 }
+
 .logo{
     padding:20%;
 }
