@@ -2,18 +2,15 @@
 #map {
     height: 100%;
   }
-  html {
+
+  html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
-*{
-    padding:0;
-    margin:0;
-}
-body{
-    height:100%;
-    background: greenyellow;
+
+body  {
+  background: black;
 }
 
 .logo{
@@ -49,4 +46,15 @@ body{
 
   .container{
       padding-left: 20%;
+  } 
+  .input-field, input[type=text]:focus + label {
+    color: rgb(255, 255, 255);
   }
+
+  input, select, textarea{
+    color: #ff0000;
+}
+
+textarea:focus, input:focus {
+    color: #ff0000;
+}
