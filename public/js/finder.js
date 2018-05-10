@@ -3,9 +3,8 @@ var map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 40.5696112, lng: -111.8955148 },
-        zoom: 16
+        zoom: 19
     });
-    infoWindow = new google.maps.InfoWindow;
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -14,15 +13,24 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
+            var mymarker = new google.maps.Marker({
+                map: map,
+                position: pos,
+                title: 'current location',
+                icon: '../images/yourloc.png'
+                 
+            });
+            
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
+            //infoWindow.setPosition(pos);
+            //infoWindow.setContent('Location found.');
+            //infoWindow.open(map);
             map.setCenter(pos);
+// google places search to find Bathrroms and plotting them on the map            
             var service = new google.maps.places.PlacesService(map);
             service.nearbySearch({
                 location: pos,
-                radius: 3000,
+                radius: 100,
                 type: ['bathroom']
             }, callback);
         });
@@ -39,12 +47,14 @@ function initMap() {
             var placeLoc = place.geometry.location;
             var marker = new google.maps.Marker({
                 map: map,
-                position: place.geometry.location
+                position: place.geometry.location,
+                icon: '../images/maptoilet.svg'
             });
-
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
+            var infoWindow = new google.maps.InfoWindow({
+                content: '<h1>Whatever we want</h1>' 
+            });
+            marker.addListener('click', function () {
+                infoWindow.open(map, marker);
             });
         }
     } function handleLocationError() {
@@ -59,4 +69,21 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
+const colculateAndRenderDirections = (origin, destination) => {
+    let directionsService = new google.maps.DirectionsService(),
+        directionsDisplay = new googl.maps.DirectionRenderer(),
+        request = { 
+            origin: origin,
+            destination: destination,
+            travelMode: 'WALKING'
+        }
+    directionsDisplay.setMap(map);
+    directionsService.route(request, (result, status) => {
+        if (status == 'ok') {
+            directionsDisplay.setDirections(result);
+        }
+    })
+}
+
 
