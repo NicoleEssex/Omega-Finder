@@ -4,7 +4,7 @@
 }
 body{
     
-    background: greenyellow;
+    background: black;
 }
 h3 {
     color: red
@@ -42,4 +42,15 @@ h3 {
 
   .container{
       padding-left: 20%;
+  } 
+  .input-field, input[type=text]:focus + label {
+    color: rgb(255, 255, 255);
   }
+
+  input, select, textarea{
+    color: #ff0000;
+}
+
+textarea:focus, input:focus {
+    color: #ff0000;
+}
