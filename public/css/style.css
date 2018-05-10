@@ -1,19 +1,21 @@
 
 #map {
-    height: 40%;
+    height: 100%;
   }
-
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 *{
     padding:0;
     margin:0;
 }
 body{
-    
+    height:100%;
     background: greenyellow;
 }
-h3 {
-    color: red
-}
+
 .logo{
     padding:20%;
 }

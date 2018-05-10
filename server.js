@@ -1,8 +1,11 @@
+// import { ADDRCONFIG } from "dns";
+
 // DEPENDENCIES
 var express = require("express");
 var bodyParser = require("body-parser");
 var dotEnv = require('dotenv');
-var sequelize= require("sequelize")
+var sequelize= require("sequelize");
+
 //=====================================================
 
 //Set up dotEnv
@@ -17,6 +20,7 @@ var PORT = process.env.PORT || 3000;
 
 // Require Models
 var db = require("./models");
+db.sequelize.sync();
 // ====================================================
 
 // Set up Express for data parsing
@@ -30,9 +34,7 @@ app.use(express.static("public"));
 
 // ROUTES
 require("./routes/html-routes.js")(app);
-// TO DO
-// require api route for index.js
-// require api route for post.js
+require("./routes/api-routes.js")(app);
 // ====================================================
 
 

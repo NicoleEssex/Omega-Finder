@@ -1,13 +1,14 @@
 window.onload=function(){
-  (function() {
+  
+  // (function() {
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyBfMKvm14l_qmH1I5zhQH4l3dL_N1V288Q",
-      authDomain: "omega-7476f.firebaseapp.com",
-      databaseURL: "https://omega-7476f.firebaseio.com",
-      projectId: "omega-7476f",
-      storageBucket: "",
-      messagingSenderId: "465935291703"
+      apiKey:process.env.FB_KEY,
+      authDomain:process.env.AUTH_DOMAIN,
+      databaseURL:process.env.FB_URL,
+      projectId:process.env.PROJECT_ID,
+      storageBucket:"",
+      messagingSenderId:process.env.MSG_SENDER_ID
     };
     firebase.initializeApp(config);
     //   get elements
@@ -55,6 +56,6 @@ window.onload=function(){
         btnLogOut.classList.add("hide");
       }
     });
-  })();
+  // })();
   
 }
