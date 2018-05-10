@@ -1,4 +1,14 @@
 
+window.onload=function(){
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left'
+    });
+  });
+};
+
+
 var map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
