@@ -1,14 +1,18 @@
-*{
-    padding:0;
-    margin:0;
+#map {
+    height: 100%;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+body  {
+  background: black;
+
 }
-body{
-    
-    background: green;
-}
-h3 {
-    color: red
-}
+
 .logo{
     padding:20%;
 }
