@@ -1,14 +1,15 @@
 window.onload=function(){
-  
+var dotEnv = require('dotenv');
+dotEnv.config();
   // (function() {
     // Initialize Firebase
     var config = {
-      apiKey:process.env.FB_KEY,
-      authDomain:process.env.AUTH_DOMAIN,
-      databaseURL:process.env.FB_URL,
-      projectId:process.env.PROJECT_ID,
+      apiKey:"AIzaSyAxsphhXHJg4lPCVyYX3X9gcVh-L0a1SB8",
+      authDomain:"omega-e9b06.firebaseapp.com",
+      databaseURL:"https://omega-e9b06.firebaseio.com",
+      projectId:"omega-e9b06",
       storageBucket:"",
-      messagingSenderId:process.env.MSG_SENDER_ID
+      messagingSenderId:"632251860755"
     };
     firebase.initializeApp(config);
     //   get elements

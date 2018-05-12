@@ -1,15 +1,10 @@
-// import { ADDRCONFIG } from "dns";
-
 // DEPENDENCIES
+var dotEnv = require('dotenv');
+dotEnv.config();
 var express = require("express");
 var bodyParser = require("body-parser");
-var dotEnv = require('dotenv');
 var sequelize= require("sequelize");
 
-//=====================================================
-
-//Set up dotEnv
-// dotEnv.config();
 //=====================================================
 
 // Set up Express App
