@@ -15,7 +15,7 @@ module.exports = function(app) {
 
   // GET route for getting all of the ratings
   app.get("/api/rating", function(req, res) {
-    db.Rating.findAll({}).then(function(results){
+    db.Ratings.findAll({}).then(function(results){
       console.log(results);
       res.json(results);
       
@@ -26,7 +26,7 @@ module.exports = function(app) {
     app.post("/api/rating", function(req, res) {
         console.log("Rating Data");
         console.log(req.body);
-        Rating.create({
+        Ratings.create({
             rating: req.body.float,
             comment: req.body.text
         })
