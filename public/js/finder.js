@@ -1,4 +1,14 @@
+
 var map, infoWindow, infoWindowo;
+window.onload=function(){
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left'
+    });
+  });
+};
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 40.5696112, lng: -111.8955148 },

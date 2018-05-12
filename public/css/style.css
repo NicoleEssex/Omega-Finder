@@ -1,4 +1,3 @@
-
 #map {
     height: 100%;
   }
@@ -9,9 +8,11 @@
     padding: 0;
   }
 
-h3 {
-    color: red
+body  {
+  background: black;
+
 }
+
 .logo{
     padding:20%;
 }
@@ -45,8 +46,23 @@ h3 {
 
   .container{
       padding-left: 20%;
+
   }
 
   .checked{
       color: #ffd000;
   }
+
+  } 
+  .input-field, input[type=text]:focus + label {
+    color: rgb(255, 255, 255);
+  }
+
+  input, select, textarea{
+    color: #ff0000;
+}
+
+textarea:focus, input:focus {
+    color: #ff0000;
+}
+

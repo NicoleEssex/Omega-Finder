@@ -5,23 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="./images/omega.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Finder</title>
-   
+
 </head>
 <body>
-    <div id="map"></div>
-   
-<script src="app.js "></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <div class="logo">
+            <img src="./images/omega.svg" alt="">
+        </div>
 
-<!-- todo -->
-<!-- create a button that asks the user if they would like to rate the bathroom and take us to the rating -->
+
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red">
+              <i class="large material-icons">mode_edit</i>
+            </a>
+            <ul>
+              <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+              <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+              <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+              <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+            </ul>
+          </div>
+
+
+        <div id="map"></div>
+
+    <div class="page-footer">
+            <p class="center">logo © Shawn Connell 2018</p>
+            <br>
+            <p class="center">© Pueblas Conductiadad</p>
+            <br> </div>
 
     </body>
+
 <script src="js/finder.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiDviwzKx30i8gRwlSMYaQky5_xcekb5M&callback=initMap&libraries=places">
 </script>
+
 </html>
