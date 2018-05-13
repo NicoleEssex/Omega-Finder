@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes){
-    var Image = sequelize.define("image", {
+    var image = sequelize.define("image", {
         location: {
             type: DataTypes.TEXT
         },
         image: {
-            type: DataTypes.BLOB
+            type: DataTypes.TEXT
         },
         createdAt: {
             type: DataTypes.TEXT,
@@ -15,5 +15,5 @@ module.exports = function(sequelize, DataTypes){
             allowNull: true
         }
     });
-    return Image;
+    return image;
 }

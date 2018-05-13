@@ -41,7 +41,7 @@ function initMap() {
             //infoWindow.setContent('Location found.');
             //infoWindow.open(map);
             map.setCenter(pos);
-            // google places search to find Bathrroms and plotting them on the map            
+            // google places search to find Bathrooms and plotting them on the map            
             var service = new google.maps.places.PlacesService(map);
             service.nearbySearch({
                 location: pos,
@@ -108,7 +108,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 const colculateAndRenderDirections = (origin, destination) => {
     let directionsService = new google.maps.DirectionsService(),
-        directionsDisplay = new googl.maps.DirectionRenderer(),
+        directionsDisplay = new google.maps.DirectionRenderer(),
         request = {
             origin: origin,
             destination: destination,
@@ -122,5 +122,22 @@ const colculateAndRenderDirections = (origin, destination) => {
     })
 }
 
+//This function grabs the location from the database and updates the view
+function getRatings(location) {
+    var placeId = location || "";
+    if (placeId) {
+      placeId = "/rating/location/: " + placeId;
+    }
+    $.get("/api/rating/location/: " + placeId, function(data) {
+      console.log("Rating", data);
+    //   ratings = data;
+    //   if (!ratings || !ratings.length) {
+    //     displayEmpty();
+    //   }
+    //   else {
+    //     initializeRows();
+    //   }
+    });
+  }
 
 
