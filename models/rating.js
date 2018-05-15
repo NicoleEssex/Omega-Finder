@@ -9,6 +9,9 @@ module.exports = function(sequelize, DataTypes){
         comment: {
             type: DataTypes.TEXT
         },
+        image: {
+            type: DataTypes.TEXT
+        },
         createdAt: {
             type: DataTypes.TEXT,
             allowNull: true

@@ -11,25 +11,49 @@ var db = require("../models");
 //=====================================================
 
 // ROUTES
-module.exports = function(app) {
+module.exports = function (app) {
 
-  // GET route for getting all of the ratings
-  app.get("/api/rating", function(req, res) {
-    db.Ratings.findAll({}).then(function(results){
-      console.log(results);
-      res.json(results);
-      
+    // GET route for getting all of the ratings
+    app.get("/api/rating", function (req, res) {
+        db.Ratings.findAll({}).then(function(results){
+          console.log(results);
+          res.json(results);
+        });
     });
-  });
+
+    // Get route for retrieving a single bathroom by id
+    app.get("/api/rating/:id", function(req, res) {
+        db.Ratings.findOne({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(result) {
+            res.json(result);
+          });
+    });
+     // Get route for retrieving a single bathroom by location
+     app.get("/api/rating/location/:location", function(req, res) {
+        db.Ratings.findAll({
+          where: {
+            location: req.params.location
+          }
+        }).then(function(result) {
+            res.json(result);
+          });
+    });
+
 
     //POST route for saving a new rating.
-    app.post("/api/rating", function(req, res) {
+    app.post("/api/rating/create", function (req, res) {
         console.log("Rating Data");
         console.log(req.body);
-        Ratings.create({
-            rating: req.body.float,
-            comment: req.body.text
-        })
+        db.Ratings.create({
+            location: req.body.location,
+            rating: req.body.rating,
+            comment: req.body.comment
+        }).then(function(result){
+            res.json(result);
+        });
     });
 };
 //=====================================================
