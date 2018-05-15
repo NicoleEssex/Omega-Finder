@@ -1,71 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Omega Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="./images/omega.png" type="image/x-icon">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/omegalogo.ico" type="image/x-icon">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <!-- my css -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-    <title>login</title>
-</head>
+    <!-- jquery -->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 
-<body>
+<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBfMKvm14l_qmH1I5zhQH4l3dL_N1V288Q",
+    authDomain: "omega-7476f.firebaseapp.com",
+    databaseURL: "https://omega-7476f.firebaseio.com",
+    projectId: "omega-7476f",
+    storageBucket: "omega-7476f.appspot.com",
+    messagingSenderId: "465935291703"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'omega.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        //   firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        //   firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        //   firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        //   firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: 'omega.html'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body>
     <div class="logo">
         <img src="./images/omega.svg" alt="omega logo">
     </div>
-    <div class="row">
-        <div class="col s12">
-            <!-- <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input placeholder="First" id="firstName" type="text" class="validate">
-                    <label for="firstName">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input placeholder="Last" id="lastName" type="text" class="validate">
-                    <label for="lastName">Last Name</label>
-                </div>
-            </div> -->
-            <div class="row">
-                <div class="input-field col s4">
-                    <i class="material-icons prefix">lock</i>
-                    <input id="password" type="password" class="validate">
-                   
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s4">
-                        <i class="material-icons prefix">email</i>
-                    <input id="email" type="email" class="validate">
-                  
-                </div>
-            </div>
-            <button id="btnLogin" class="btn btn-action waves-effect waves-light" name="action">Log In
-                <i class="material-icons right">person</i>
-            </button>
-            <button id="btnSignUp" class="btn btn-action waves-effect waves-light" name="action">Sign Up
-                <i class="material-icons right">person_add</i>
-            </button>
-            <button id="btnLogout" class="btn btn-action waves-effect waves-light hide" name="action">Log Out
-                <i class="material-icons right">eject</i>
-            </button>
-        </div>
-    </div>
-    <div class="page-footer">
-        <p class="center">logo © Shawn Connell 2018</p>
-        <br>
-        <p class="center">© Pueblas Conductiadad</p>
-        <br> 
-    </div>
-        <script src="js/login.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-</body>
-
+    
+    <div id="firebaseui-auth-container"></div>
+  </body>
 </html>
