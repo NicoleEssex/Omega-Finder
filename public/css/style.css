@@ -1,6 +1,29 @@
 #map {
     height: 100%;
   }
+  
+  #ratings {
+    position: relative;
+    top: -6em;
+    background-color: #f96a27;
+    padding: 6px;
+    color: white;
+    border: black 3px solid;
+    font-size: 30px;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+  }
+
+
+  #rateButton {
+    background: #f96a27;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    border: black 3px solid;
+  }
 
   html, body {
     height: 100%;
