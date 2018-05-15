@@ -52,8 +52,7 @@ body  {
   .checked{
       color: #ffd000;
   }
-
-  } 
+  
   .input-field, input[type=text]:focus + label {
     color: rgb(255, 255, 255);
   }

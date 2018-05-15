@@ -1,12 +1,12 @@
 
 var map, infoWindow, infoWindowo;
-window.onload=function(){
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
-      direction: 'left'
+window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            direction: 'left'
+        });
     });
-  });
 };
 
 function initMap() {
@@ -69,7 +69,8 @@ function initMap() {
                 '<link rel="stylesheet" href="css/style.css">' +
                 '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' +
                 '<h1 id="firstHeading" class="firstHeading">Omega Review</h1>' +
-                '<h3>'+ place.name + '</h3>' +
+                '<h3>' + place.name + '</h3>' +
+                '<h4>' + place.vicinity + '</h4>' +
                 '<span class="fa fa-star checked"></span>' +
                 '<span class="fa fa-star checked"></span>' +
                 '<span class="fa fa-star checked"></span>' +
@@ -79,17 +80,17 @@ function initMap() {
                 '<br>' +
                 '<img src="../images/publicbathroom.jpeg">' +
                 '<div id="dmap"></div>' +
-                place.id +
-                '<button>Rate</button>' +
-                '<button>Add a Photo</button>';
+                '<div id=location>' + place.id + '</div>' +
+                '<a href="../rating.html"><button>Rate</button></a>';
+                console.log(place)
             const infoWindowo = new google.maps.InfoWindow({
                 content: contentString
             });
             marker.addListener('click', function () {
-                infoWindowo.open(map, marker);
-                infoWindowo.addListener('directions', 'click', function () {
-                    infoWindowo.colculateAndRenderDirections(pos, place.geometry.location);
+                $.get("demo_test.asp", function (data, status) {
+                    alert("Data: " + data + "\nStatus: " + status);
                 });
+                infoWindowo.open(map, marker);
             });
 
         }
