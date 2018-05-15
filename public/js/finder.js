@@ -82,13 +82,12 @@ function initMap() {
                 '<div id="dmap"></div>' +
                 '<div id=location>' + place.id + '</div>' +
                 '<a href="../rating.html"><button>Rate</button></a>';
-                console.log(place)
             const infoWindowo = new google.maps.InfoWindow({
                 content: contentString
             });
             marker.addListener('click', function () {
-                $.get("demo_test.asp", function (data, status) {
-                    alert("Data: " + data + "\nStatus: " + status);
+                $.get("/api/rating/location/:" + place.id, function (data, status) {
+                    console.log("Data: " + data + "\nStatus: " + status);
                 });
                 infoWindowo.open(map, marker);
             });
