@@ -1,4 +1,4 @@
-
+$("#ratings").hide();
 var map, infoWindow, infoWindowo;
 window.onload = function () {
     document.addEventListener('DOMContentLoaded', function () {
@@ -94,7 +94,7 @@ function initMap() {
                     var comment = data[0].comment;
                     var stars = data[0].stars;
                     $("#ratings").html("Comment: " + comment + "<br>" + "Rating: " + stars);
-
+                    $("#ratings").show();
                 });
                 infoWindowo.open(map, marker);
             });
