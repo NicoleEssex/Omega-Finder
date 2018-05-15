@@ -71,23 +71,30 @@ function initMap() {
                 '<h1 id="firstHeading" class="firstHeading">Omega Review</h1>' +
                 '<h3>' + place.name + '</h3>' +
                 '<h4>' + place.vicinity + '</h4>' +
-                '<span class="fa fa-star checked"></span>' +
-                '<span class="fa fa-star checked"></span>' +
-                '<span class="fa fa-star checked"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<br>' +
-                '<br>' +
-                '<img src="../images/publicbathroom.jpeg">' +
+                // '<h4>' + stars + '</h4>'
+                // '<h4>' + comment+ '</h4>'
+                // '<span class="fa fa-star checked"></span>' +
+                // '<span class="fa fa-star checked"></span>' +
+                // '<span class="fa fa-star checked"></span>' +
+                // '<span class="fa fa-star"></span>' +
+                // '<span class="fa fa-star"></span>' +
+                // '<br>' +
+                // '<br>' +
+                // '<img src="../images/publicbathroom.jpeg">' +
                 '<div id="dmap"></div>' +
-                '<div id=location>' + place.id + '</div>' +
-                '<a href="../rating.html"><button>Rate</button></a>';
+                // '<div class="hidden" id=location>' + place.id + '</div>' +
+                '<a href="../rating.html"><button id="rateButton">Rate This Bathroom</button></a>';
             const infoWindowo = new google.maps.InfoWindow({
                 content: contentString
             });
             marker.addListener('click', function () {
-                $.get("/api/rating/location/:" + place.id, function (data, status) {
-                    console.log("Data: " + data + "\nStatus: " + status);
+                $.get("/api/rating/location/" + place.id, function (data, status) {
+                    //WORKING
+                    // console.log("Data", data[0].comment, data[0].stars);
+                    var comment = data[0].comment;
+                    var stars = data[0].stars;
+                    $("#ratings").html("Comment: " + comment + "<br>" + "Rating: " + stars);
+
                 });
                 infoWindowo.open(map, marker);
             });
@@ -129,7 +136,7 @@ function getRatings(location) {
       placeId = "/rating/location/: " + placeId;
     }
     $.get("/api/rating/location/: " + placeId, function(data) {
-      console.log("Rating", data);
+      console.log("Comments" + data.comments);
     //   ratings = data;
     //   if (!ratings || !ratings.length) {
     //     displayEmpty();
