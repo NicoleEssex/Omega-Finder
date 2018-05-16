@@ -97,10 +97,7 @@ function initMap() {
                     $("#ratings").html("Comment: " + comment + "<br>" + "Rating: " + stars);
                     $("#ratings").show();
                 });
-                google.maps.event.addDomListener(window, 'resize', function() {
                     infoWindowo.open(map, marker);
-                  });
-                
             });
 
         }
