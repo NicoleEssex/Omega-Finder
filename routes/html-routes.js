@@ -6,7 +6,7 @@ module.exports = function(app){
     // HTML ROUTES
     //omega.html
     app.get("/", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/omega.html"));
+        res.sendFile(path.join(__dirname, "../public/login.html"));
     });
     // finder.html
     app.get("/finder", function(req, res){

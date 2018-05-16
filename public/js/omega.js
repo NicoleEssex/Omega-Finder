@@ -1,6 +1,3 @@
-// //Test for omega.js linked to omega.html
-// var para = document.createElement("p");
-// var node = document.createTextNode("omega js is linked.");
-// para.appendChild(node);
-// var element = document.getElementById("JS");
-// element.appendChild(para);
+
+// fades out after 3 seconds and redirects to the map
+setTimeout(function(){window.location.href="../public/finder.html"},3000);
