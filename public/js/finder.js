@@ -12,7 +12,8 @@ window.onload = function () {
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 40.5696112, lng: -111.8955148 },
-        zoom: 19
+        zoom: 19,
+        panControl: false
     });
     let autocomplete = new google.maps.places.Autocomplete();
 
