@@ -85,7 +85,8 @@ function initMap() {
                 // '<div class="hidden" id=location>' + place.id + '</div>' +
                 '<a href="../rating.html"><button id="rateButton">Rate This Bathroom</button></a>';
             const infoWindowo = new google.maps.InfoWindow({
-                content: contentString
+                content: contentString,
+                maxWidth: 400
             });
             marker.addListener('click', function () {
                 $.get("/api/rating/location/" + place.id, function (data, status) {
