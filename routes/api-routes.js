@@ -45,8 +45,11 @@ module.exports = function (app) {
 
     //POST route for saving a new rating.
     app.post("/api/rating/create", function (req, res) {
-        db.Ratings.create(req.body).then
-        (function(result){
+        console.log(req.body);    
+        db.Ratings.create({
+            stars: req.body.stars,
+            comment: req.body.comment,
+        }).then(function(result){
             res.json(result);
         });
     });
