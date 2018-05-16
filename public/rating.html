@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
      <title>Rating</title>
 </head>
@@ -30,9 +29,18 @@
                
             </select>
         </div>
-        <div class="form-group">
+        <form class="form-group" id="rateForm">
+            How many stars would you give this bathroom (between 1 and 5):
+            <label for="stars">stars:</label>
+            <input type="number" id="stars" name="quantity" min="1" max="5">
+            <label for="comment">comment:</label>
+            <textarea name="message" rows="10" cols="30" placeholder="Please leave a comment about the bathroom here..."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form> 
+        <!-- <div class="form-group">
             <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1 - 5" disabled>
-        </div>
+        </div> -->
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -54,7 +62,12 @@
             </tbody>
         </table>
     </div>
-    
+    <div class="page-footer">
+            <br>
+            <p class="center">Brought to you by Prueba Conducida ©</p>
+            <p class="center">logo © Shawn Connell 2018</p>
+            <br> 
+    </div>            
 </body>
 <script src="js/rating.js"></script>
 

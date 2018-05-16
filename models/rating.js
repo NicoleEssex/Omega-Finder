@@ -12,14 +12,9 @@ module.exports = function(sequelize, DataTypes){
         image: {
             type: DataTypes.TEXT
         },
-        createdAt: {
-            type: DataTypes.TEXT,
-            allowNull: true
-        },
-        updatedAt: {
-            type: DataTypes.TEXT,
-            allowNull: true
-        }
+        createdAt: DataTypes.DATE,
+             
+        updatedAt: DataTypes.DATE
     });
     return Ratings;
 }
