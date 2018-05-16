@@ -90,9 +90,9 @@ function initMap() {
             marker.addListener('click', function () {
                 $.get("/api/rating/location/" + place.id, function (data, status) {
                     //WORKING
-                    // console.log("Data", data[0].comment, data[0].stars);
-                    var comment = data[0].comment;
-                    var stars = data[0].stars;
+                    // console.log("Data", data.comment, data.stars);
+                    var comment = data.comment;
+                    var stars = data.stars;
                     $("#ratings").html("Comment: " + comment + "<br>" + "Rating: " + stars);
                     $("#ratings").show();
                 });
@@ -145,6 +145,8 @@ function getRatings(location) {
     //     initializeRows();
     //   }
     });
+    
+
   }
 
 
