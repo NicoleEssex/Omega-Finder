@@ -147,7 +147,9 @@ function getRatings(location) {
     //   }
     });
     
-
   }
-
+  define(function (require, exports, module) {
+    module.exports = {getRatings};
+  });
+  
 
