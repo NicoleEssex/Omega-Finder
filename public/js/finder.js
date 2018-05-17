@@ -90,10 +90,9 @@ function initMap() {
             });
             marker.addListener('click', function () {
                 $.get("/api/rating/location/" + place.id, function (data, status) {
-                    //WORKING
-                    // console.log("Data", data.comment, data.stars);
-                    var comment = data.comment;
-                    var stars = data.stars;
+                    var comment = data[0].comment;
+                    var stars = data[0].stars;
+                    console.log(data)
                     $("#ratings").html("Comment: " + comment + "<br>" + "Rating: " + stars);
                     $("#ratings").show();
                 });
@@ -131,23 +130,24 @@ const colculateAndRenderDirections = (origin, destination) => {
 }
 
 //This function grabs the location from the database and updates the view
-function getRatings(location) {
-    var placeId = location || "";
-    if (placeId) {
-      placeId = "/rating/location/: " + placeId;
-    }
-    $.get("/api/rating/location/: " + placeId, function(data) {
-      console.log("Comments" + data.comments);
-    //   ratings = data;
-    //   if (!ratings || !ratings.length) {
-    //     displayEmpty();
-    //   }
-    //   else {
-    //     initializeRows();
-    //   }
-    });
+// function getRatings(location) {
+//     var placeId = location || "";
+//     if (placeId) {
+//       placeId = "/rating/location/: " + placeId;
+//     }
+//     $.get("/api/rating/location/: " + placeId, function(data) {
+//       console.log("Comments" + data.comments);
+//     //   ratings = data;
+//     //   if (!ratings || !ratings.length) {
+//     //     displayEmpty();
+//     //   }
+//     //   else {
+//     //     initializeRows();
+//     //   }
+//     });
     
-  }
+//   }
+//   getRatings();
   
 
   
