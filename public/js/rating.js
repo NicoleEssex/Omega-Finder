@@ -65,8 +65,6 @@ $(document).ready(function() {
   var rateForm = $("#rateForm");
  
   
-  import {getRatings} from 'finder.js';
-  consol.log(placeId);
   
   // Adding an event listener for when the form is submitted
   $(rateForm).on("submit", handleFormSubmit);
